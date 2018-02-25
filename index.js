@@ -19,13 +19,6 @@ export default {
 
     el.addEventListener('blur', el.__vueOutOfFocusCb__, true)
   },
-  inserted: function (el) {
-    el.focus()
-  },
-  update: function (el, binding) {
-    if (!validate(binding)) return
-    el.focus()
-  },
   unbind: function (el, binding) {
     el.removeEventListener('blur', el.__vueOutOfFocusCb__, true)
     delete el.__vueOutOfFocusCb__

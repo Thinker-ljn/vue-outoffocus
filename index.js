@@ -11,7 +11,7 @@ export default {
     if (!validate(binding)) return
 
     el.__vueOutOfFocusCb__ = (e) => {
-      if (!el.contains(e.relatedTarget)) setTimeout(binding.value, 0)
+      if (!el.contains(e.relatedTarget) && !el.contains(document.activeElement)) setTimeout(binding.value, 0)
     }
 
     el.setAttribute('tabindex', '-1')

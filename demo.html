@@ -11,15 +11,15 @@
     <div id="test">
       <div v-outoffocus="outoffocus">
         <button @click="clickBtn">显示列表</button>
-        <ul v-show="show">
+        <ul v-if="show">
           <li>1</li>
           <li>2</li>
           <li>3</li>
       </div>
       </ul>
     </div>
-   <script src="https://cdn.bootcss.com/vue/2.3.4/vue.js"></script>
-   <script type="module">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>
+    <script type="module">
       import outoffocus from './index.js'
       let vm = new Vue({
         el: '#test',
@@ -39,7 +39,7 @@
           outoffocus
         }
       })
-   </script>
+    </script>
 </body>
 <style>
 body

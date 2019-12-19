@@ -41,7 +41,12 @@ export default {
       let activeEl = document.activeElement
 
       if (activeEl !== el && !el.contains(activeEl)) {
-        setTimeout(cb, 0)
+        setTimeout(() => {
+          const result = cb(ev)
+          if (typeof result === 'function') {
+            result(ev)
+          }
+        }, 0)
       }
     }
 
